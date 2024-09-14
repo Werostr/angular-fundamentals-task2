@@ -1,13 +1,32 @@
-<app-header></app-header>
+<app-header><app-button [buttonText]="'LOGIN'"></app-button></app-header>
+<app-header
+  >Harry Potter<app-button [buttonText]="'LOGOUT'"></app-button
+></app-header>
 <div class="app-root">
   <!-- Search component -->
   <!--<app-search></app-search>-->
 
+  <div class="app-root__buttons">
+    <app-button [buttonText]="'SHOW COURSE'"></app-button>
+    <app-button [iconName]="'trash'"></app-button>
+    <app-button [iconName]="'pen'"></app-button>
+  </div>
+
   <!-- Info component -->
-  <!--<app-info></app-info>-->
+  <div class="app-root__info">
+    <app-info
+      [title]="'Your list is empty'"
+      [text]="'Please use `Add new course` button to add your first course'"
+      ><app-button [buttonText]="'ADD NEW COURSE'"></app-button
+    ></app-info>
+  </div>
 
   <!-- Course Card component -->
-  <!--<app-course-card></app-course-card>-->
+  <!-- <app-course-card></app-course-card> -->
+
+  <app-courses-list [courses]="courses"></app-courses-list>
+
+  <app-course-info [course]="courses[0]"></app-course-info>
 
   <!-- Login Form component -->
   <!--<app-login-form></app-login-form>-->
